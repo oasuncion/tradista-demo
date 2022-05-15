@@ -3,7 +3,7 @@
 This is a demo package for Tradista.
 
 This demo package is made of Tradista database, server and desktop client installed locally.
-This Tradista environment contains dummy data. A "DemoBook" book is used, with trades of several asset classes being booked.
+This Tradista environment contains dummy data. A "Demo Book" book is used, with trades of several asset classes being booked.
 
 Start Tradista as follows:
 
