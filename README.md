@@ -18,4 +18,8 @@ You can connect using the login/pwd: test/test
 Feel free to request features or report bugs on [tradista repository](https://github.com/oasuncion/tradista).
 If you see missing useful data on this demo environment, feel free to request it on [tradista-demo repository](https://github.com/oasuncion/tradista-demo).
 
+This demo is packaged using [Inno Setup](https://jrsoftware.org/isinfo.php).
+
 ![Dashboard](./ReadmePic.PNG)
+
+
