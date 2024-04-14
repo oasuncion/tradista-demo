@@ -11,7 +11,9 @@ Start Tradista as follows:
 2. Execute startTradistaServer.bat (startTradistaServer.sh on Linux/Unix)
 3. Execute startTradistaClient.bat (startTradistaClient.sh on Linux/Unix)
 
-For a demo of the Web GUI (Only Equities), go to http://localhost:8080/web/login.xhtml
+General Collateral Repo (GC Repo) trading Dashboard is web based and can be accessed at http://localhost:8080/web/login.xhtml
+
+A demo of the Equity trading web based dashboard can be tested at http://localhost:8080/web/loginDemo.xhtml
 
 You can connect using the login/pwd: test/test
 
