@@ -22,6 +22,8 @@ If you see missing useful data on this demo environment, feel free to request it
 
 This demo is packaged using [Install4J](https://www.ej-technologies.com/products/install4j/overview.html).
 
-![Dashboard](./ReadmePic.PNG)
+|![Login](./login.PNG)|![Dashboard](./dashboard.PNG)|
+|:-:|:-:|
+| Login Page | Trading Dashboard |
 
 
