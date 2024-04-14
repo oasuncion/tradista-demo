@@ -1,5 +1,7 @@
 # tradista-demo
 
+![License](https://img.shields.io/badge/License-Apache_2.0-33ff99.svg?link=https://www.apache.org/licenses/LICENSE-2.0)
+
 This is a demo package for Tradista, available on Windows and Linux/Unix.
 
 This demo package is made of Tradista database, server and desktop client installed locally.
