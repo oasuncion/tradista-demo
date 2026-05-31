@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.extension.picketlink" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <exports>
+        <exclude path="org/wildfly/extension/picketlink/logging"/>
+    </exports>
+
+    <resources>
+        <resource-root path="wildfly-picketlink-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.staxmapper"/>
+    </dependencies>
+</module>

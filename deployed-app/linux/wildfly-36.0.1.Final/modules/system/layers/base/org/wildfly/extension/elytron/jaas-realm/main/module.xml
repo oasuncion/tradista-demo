@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2023, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+<module name="org.wildfly.extension.elytron.jaas-realm" xmlns="urn:jboss:module:1.9">
+
+    <!--    This module is deprecated, and you should use the jaas-realm resource instead of this module. -->
+    <properties>
+        <property name="jboss.api" value="deprecated"/>
+    </properties>
+
+    <dependencies>
+        <module name="java.logging"/>
+        <module name="java.xml"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.logmanager"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-private" export="true"/>
+        <module name="org.wildfly.extension.elytron" export="true">
+            <exports>
+                <!--
+                     Limit what we export by excluding resources in subdirectories of 'org/wildfly/extension/elytron'.
+                     The meaning of the trailing '*' in the path here is to match subdirectories, but not individual
+                     resources directly under 'org/wildfly/extension/elytron'.
+                     Ideally we would only export a single class, but JBoss Modules does not support that kind of
+                     configuration, so as a next-best we don't export resources that are not in that class's package.
+                 -->
+                <exclude path="org/wildfly/extension/elytron/*"/>
+            </exports>
+        </module>
+    </dependencies>
+</module>

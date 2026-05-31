@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.eclipse.microprofile.jwt.auth.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="microprofile-jwt-auth-api-2.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.inject.api"/>
+        <module name="jakarta.json.api"/>
+    </dependencies>
+</module>

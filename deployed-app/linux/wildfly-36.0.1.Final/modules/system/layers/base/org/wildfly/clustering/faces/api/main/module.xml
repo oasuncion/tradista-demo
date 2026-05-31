@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.clustering.faces.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-clustering-faces-api-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.faces.api"/>
+
+        <module name="org.infinispan.protostream"/>
+        <module name="org.wildfly.clustering.marshalling.protostream"/>
+        <module name="org.wildfly.security.elytron-private"/>
+    </dependencies>
+</module>

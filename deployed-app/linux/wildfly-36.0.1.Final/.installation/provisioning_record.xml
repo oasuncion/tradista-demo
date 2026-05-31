@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<installation xmlns="urn:jboss:galleon:provisioning:3.0">
+    <transitive>
+        <feature-pack location="wildfly-ee@maven(org.jboss.universe:community-universe):current#36.0.1.Final">
+            <packages>
+                <include name="docs.examples.configs"/>
+            </packages>
+        </feature-pack>
+    </transitive>
+    <feature-pack location="wildfly@maven(org.jboss.universe:community-universe):current#36.0.1.Final">
+        <packages>
+            <include name="docs.examples.configs"/>
+        </packages>
+    </feature-pack>
+    <options>
+        <option name="jboss-fork-embedded" value="true"/>
+    </options>
+</installation>

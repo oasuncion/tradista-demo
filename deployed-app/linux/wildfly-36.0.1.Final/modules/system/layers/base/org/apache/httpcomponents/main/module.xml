@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.httpcomponents" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="httpcore-nio-4.4.16.jar"/>
+        <resource-root path="httpasyncclient-4.1.5.jar"/>
+        <resource-root path="httpmime-4.5.14.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.apache.commons.codec"/>
+        <module name="org.apache.commons.logging"/>
+        <module name="org.apache.httpcomponents.core" export="true" services="export"/>
+    </dependencies>
+</module>

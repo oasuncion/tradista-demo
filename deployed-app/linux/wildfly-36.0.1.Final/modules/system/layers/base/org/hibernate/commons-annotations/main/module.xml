@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<!-- Represents the Hibernate 4.0.x module-->
+<module name="org.hibernate.commons-annotations" xmlns="urn:jboss:module:1.9">
+    <resources>
+        <resource-root path="hibernate-commons-annotations-7.0.3.Final.jar"/>
+    </resources>
+
+    <dependencies>
+       <module name="org.jboss.logging"/>
+    </dependencies>
+</module>

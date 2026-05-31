@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.extension.microprofile.metrics-smallrye" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-microprofile-metrics-smallrye-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.undertow.core"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.core-security"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.vfs"/>
+        <module name="org.wildfly.extension.metrics"/>
+        <module name="org.wildfly.extension.microprofile.config-smallrye"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.annotation.api"/>
+    </dependencies>
+</module>

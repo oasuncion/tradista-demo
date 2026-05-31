@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="javax.xml.stream.api" xmlns="urn:jboss:module:1.9">
+        <!--
+		This module is deprecated and any use of it should be replaced
+		with java.xml JPMS module provided by Java SE.
+	-->
+    <properties>
+        <property name="jboss.api" value="deprecated"/>
+    </properties>
+    <dependencies>
+        <module name="java.xml">
+            <exports>
+                <include-set>
+                    <path name="javax/xml/stream"/>
+                    <path name="javax/xml/stream/events"/>
+                    <path name="javax/xml/stream/util"/>
+                </include-set>
+            </exports>
+        </module>
+    </dependencies>
+</module>

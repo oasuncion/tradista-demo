@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.clustering.ejb.cache" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-clustering-ejb-cache-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.infinispan.commons"/>
+        <module name="org.infinispan.protostream"/>
+        <module name="org.jboss.ejb-client"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.marshalling"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.wildfly.clustering.cache.spi"/>
+        <module name="org.wildfly.clustering.ejb.client"/>
+        <module name="org.wildfly.clustering.ejb.spi"/>
+        <module name="org.wildfly.clustering.marshalling.jboss"/>
+        <module name="org.wildfly.clustering.marshalling.protostream"/>
+        <module name="org.wildfly.clustering.marshalling.spi"/>
+        <module name="org.wildfly.clustering.server.api"/>
+        <module name="org.wildfly.clustering.server.spi"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-private"/>
+        <module name="org.wildfly.service"/>
+        <module name="org.wildfly.subsystem"/>
+    </dependencies>
+</module>

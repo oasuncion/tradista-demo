@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.eclipse.microprofile.restclient" xmlns="urn:jboss:module:1.9">
+
+  <properties>
+    <property name="jboss.api" value="private"/>
+  </properties>
+
+  <resources>
+    <resource-root path="microprofile-rest-client-api-4.0.jar"/>
+  </resources>
+
+  <dependencies>
+    <module name="java.logging"/>
+    <module name="jakarta.annotation.api"/>
+    <module name="jakarta.enterprise.api"/>
+    <module name="jakarta.xml.bind.api"/>
+    <module name="jakarta.ws.rs.api"/>
+    <module name="org.eclipse.microprofile.config.api"/>
+  </dependencies>
+</module>

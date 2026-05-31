@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<!-- The module was renamed in Hibernate Search 6.0. -->
+<module-alias name="org.hibernate.search.orm" target-name="org.hibernate.search.mapper.orm" xmlns="urn:jboss:module:1.9"/>

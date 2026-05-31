@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.domain-add-user" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.require-java-version" value="11"/>
+    </properties>
+
+    <main-class name="org.jboss.as.domain.management.security.adduser.AddUser"/>
+
+    <resources>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.as.domain-management"/>
+        <module name="org.jboss.logmanager" services="import"/>
+    </dependencies>
+</module>

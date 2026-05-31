@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.smallrye.config" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="smallrye-config-3.12.4.jar"/>
+        <resource-root path="smallrye-config-common-3.12.4.jar"/>
+        <resource-root path="smallrye-config-core-3.12.4.jar"/>
+        <resource-root path="smallrye-config-source-file-system-3.12.4.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="asm.asm"/>
+        <module name="org.eclipse.microprofile.config.api"/>
+        <module name="org.jboss.logging"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.annotation.api"/>
+        <module name="io.smallrye.common.constraint"/>
+        <module name="io.smallrye.common.classloader"/>
+        <module name="io.smallrye.common.expression"/>
+        <module name="io.smallrye.common.function"/>
+    </dependencies>
+</module>

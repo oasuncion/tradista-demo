@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="de.dentrassi.crypto.pem-keystore" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="pem-keystore-2.4.0.jar"/>
+    </resources>
+
+
+    <dependencies>
+        <module name="org.bouncycastle.bcpkix" export="true" services="export"/>
+        <module name="org.bouncycastle.bcprov" export="true" services="export"/>
+    </dependencies>
+
+    <provides>
+        <service name="java.security.Provider">
+            <with-class name="de.dentrassi.crypto.pem.PemKeyStoreProvider"/>
+        </service>
+    </provides>
+</module>

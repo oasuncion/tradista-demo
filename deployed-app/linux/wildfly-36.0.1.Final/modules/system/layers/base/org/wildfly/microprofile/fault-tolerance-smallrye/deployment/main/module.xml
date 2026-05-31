@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.microprofile.fault-tolerance-smallrye.deployment" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-microprofile-fault-tolerance-smallrye-deployment-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.naming"/>
+
+        <module name="jakarta.enterprise.concurrent.api"/>
+
+        <module name="io.smallrye.fault-tolerance"/>
+    </dependencies>
+
+</module>

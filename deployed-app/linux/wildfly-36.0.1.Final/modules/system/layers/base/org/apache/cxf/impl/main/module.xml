@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.cxf.impl" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="cxf-rt-bindings-coloc-4.0.6.jar"/>
+        <resource-root path="cxf-rt-bindings-soap-4.0.6.jar"/>
+        <resource-root path="cxf-rt-bindings-xml-4.0.6.jar"/>
+        <resource-root path="cxf-rt-databinding-aegis-4.0.6.jar"/>
+        <resource-root path="cxf-rt-databinding-jaxb-4.0.6.jar"/>
+        <resource-root path="cxf-rt-features-clustering-4.0.6.jar"/>
+        <resource-root path="cxf-rt-features-throttling-4.0.6.jar"/>
+        <resource-root path="cxf-rt-frontend-jaxws-4.0.6.jar"/>
+        <resource-root path="cxf-rt-frontend-simple-4.0.6.jar"/>
+        <resource-root path="cxf-rt-management-4.0.6.jar"/>
+        <resource-root path="cxf-rt-security-4.0.6.jar"/>
+        <resource-root path="cxf-rt-security-saml-4.0.6.jar"/>
+        <resource-root path="cxf-rt-transports-http-4.0.6.jar"/>
+        <resource-root path="cxf-rt-transports-http-hc-4.0.6.jar"/>
+        <resource-root path="cxf-rt-transports-jms-4.0.6.jar"/>
+        <resource-root path="cxf-rt-transports-local-4.0.6.jar"/>
+        <resource-root path="cxf-rt-wsdl-4.0.6.jar"/>
+        <resource-root path="cxf-rt-ws-addr-4.0.6.jar"/>
+        <resource-root path="cxf-rt-ws-mex-4.0.6.jar"/>
+        <resource-root path="cxf-rt-ws-policy-4.0.6.jar"/>
+        <resource-root path="cxf-rt-ws-rm-4.0.6.jar"/>
+        <resource-root path="cxf-tools-common-4.0.6.jar"/>
+        <resource-root path="cxf-tools-java2ws-4.0.6.jar"/>
+        <resource-root path="cxf-tools-validator-4.0.6.jar"/>
+        <resource-root path="cxf-tools-wsdlto-core-4.0.6.jar"/>
+        <resource-root path="cxf-tools-wsdlto-databinding-jaxb-4.0.6.jar"/>
+        <resource-root path="cxf-tools-wsdlto-frontend-jaxws-4.0.6.jar"/>
+        <resource-root path="cxf-services-ws-discovery-api-4.0.6.jar"/>
+        <resource-root path="cxf-xjc-boolean-4.0.1.jar"/>
+        <resource-root path="cxf-xjc-bug986-4.0.1.jar"/>
+        <resource-root path="cxf-xjc-dv-4.0.1.jar"/>
+        <resource-root path="cxf-xjc-ts-4.0.1.jar"/>
+        <resource-root path="cxf-xjc-runtime-4.0.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.desktop"/>
+        <module name="java.logging"/>
+        <module name="java.sql"/>
+        <module name="java.management"/>
+        <module name="java.management.rmi"/>
+        <module name="java.naming"/>
+        <module name="java.net.http"/>
+        <module name="java.rmi"/>
+        <module name="java.security.jgss"/>
+        <module name="java.xml"/>
+        <module name="asm.asm"/>
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.jms.api"/>
+        <module name="jakarta.mail.api"/>
+        <module name="jakarta.resource.api"/>
+        <module name="jakarta.servlet.api"/>
+        <module name="javax.wsdl4j.api"/>
+        <module name="jakarta.xml.bind.api" services="import"/>
+        <module name="org.glassfish.jaxb" services="import"/>
+        <module name="jakarta.xml.soap.api"/>
+        <module name="jakarta.xml.ws.api"/>
+        <module name="org.apache.commons.lang3"/>
+        <module name="org.apache.commons.logging"/>
+        <module name="org.apache.httpcomponents"/>
+        <module name="org.apache.neethi"/>
+        <module name="org.apache.velocity"/>
+        <module name="org.apache.xml-resolver"/>
+        <module name="org.apache.ws.xmlschema"/>
+        <module name="org.apache.ws.security"/>
+        <module name="org.apache.santuario.xmlsec"/>
+        <module name="org.codehaus.woodstox"/>
+        <module name="org.joda.time"/>
+        <module name="org.opensaml"/>
+        <module name="org.apache.cxf" export="true">
+          <imports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </imports>
+          <exports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </exports>
+        </module>
+        <module name="org.apache.cxf.ws-security" export="true" services="export">
+          <imports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </imports>
+          <exports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </exports>
+        </module>
+        <module name="org.apache.cxf.services-sts" export="true" services="export">
+          <imports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </imports>
+          <exports>
+            <include path="META-INF/cxf"/>
+            <include path="META-INF"/>
+          </exports>
+        </module>
+        <module name="org.springframework.spring" optional="true">
+            <imports>
+                <include path="META-INF"/>
+            </imports>
+        </module>
+    </dependencies>
+
+</module>

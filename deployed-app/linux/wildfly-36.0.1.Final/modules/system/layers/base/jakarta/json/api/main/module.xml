@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.json.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="public"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jakarta.json-api-2.1.3.jar"/>
+    </resources>
+
+    <dependencies>
+        <!--
+            This is required as a circular dependency because the RI does not include a META-INF/services provider file.
+            It must also be exported so that modules that depend on the API, e.g. deployments, will be able to see the
+            implementation.
+        -->
+        <module name="org.eclipse.parsson" export="true"/>
+        <module name="java.logging"/>
+    </dependencies>
+</module>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.enterprise.concurrent.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="jakarta.enterprise.concurrent-api-3.0.3.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.transaction.api" optional="true"/>
+    </dependencies>
+</module>

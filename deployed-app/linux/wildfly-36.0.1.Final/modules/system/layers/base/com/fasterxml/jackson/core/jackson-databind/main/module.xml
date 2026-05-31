@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.fasterxml.jackson.core.jackson-databind" xmlns="urn:jboss:module:1.9">
+
+     <resources>
+        <resource-root path="jackson-databind-2.18.3.jar"/>
+    </resources>
+    <dependencies>
+        <module name="java.desktop"/>
+        <module name="java.logging"/>
+        <module name="java.sql"/>
+        <module name="java.xml"/>
+        <module name="com.fasterxml.jackson.core.jackson-annotations"/>
+        <module name="com.fasterxml.jackson.core.jackson-core"/>
+    </dependencies>
+</module>

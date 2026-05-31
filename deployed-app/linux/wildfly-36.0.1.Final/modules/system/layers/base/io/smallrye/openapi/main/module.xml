@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.smallrye.openapi" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="smallrye-open-api-core-4.0.9.jar"/>
+        <resource-root path="smallrye-open-api-jaxrs-4.0.9.jar"/>
+        <resource-root path="smallrye-open-api-model-4.0.9.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.desktop"/>
+        <module name="java.sql"/>
+
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.json.api"/>
+        <module name="jakarta.ws.rs.api"/>
+
+        <module name="com.fasterxml.jackson.core.jackson-annotations"/>
+        <module name="com.fasterxml.jackson.core.jackson-core"/>
+        <module name="com.fasterxml.jackson.core.jackson-databind"/>
+        <module name="com.fasterxml.jackson.dataformat.jackson-dataformat-yaml"/>
+
+        <module name="org.eclipse.microprofile.config.api"/>
+        <module name="org.eclipse.microprofile.openapi.api"/>
+
+        <module name="io.smallrye.common.classloader"/>
+        <module name="io.smallrye.jandex"/>
+        <module name="org.jboss.logging"/>
+
+        <module name="org.yaml.snakeyaml"/>
+    </dependencies>
+</module>

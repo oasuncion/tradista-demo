@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="urn:jboss:deployment-dependencies:1.0"
+            xmlns="urn:jboss:deployment-dependencies:1.0"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.0">
+
+    <!-- Root element -->
+    <xsd:element name="jboss-deployment-dependencies" type="jbossDependenciesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                Root element for a jboss-dependencies file.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="jbossDependenciesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                The root type, contains the dependencies elements.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="dependency" type="dependencyType" minOccurs="0" maxOccurs="unbounded" >
+                <annotation xmlns="http://www.w3.org/2001/XMLSchema">
+                    <documentation>
+                        Element containing the name of the top level deployment that this deployment depends on.
+                    </documentation>
+                </annotation>
+            </xsd:element>
+        </xsd:sequence>
+
+    </xsd:complexType>
+    <xsd:complexType name="dependencyType">
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+    </xsd:complexType>
+</xsd:schema>
+

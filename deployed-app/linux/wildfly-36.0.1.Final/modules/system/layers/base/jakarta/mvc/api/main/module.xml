@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.mvc.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.stability" value="preview"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jakarta.mvc-api-2.1.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.validation.api"/>
+        <module name="jakarta.ws.rs.api"/>
+    </dependencies>
+</module>

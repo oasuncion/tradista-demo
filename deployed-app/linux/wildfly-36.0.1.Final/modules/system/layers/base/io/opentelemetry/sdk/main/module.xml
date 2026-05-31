@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.opentelemetry.sdk" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="opentelemetry-sdk-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-extension-autoconfigure-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-logs-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-metrics-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-trace-1.42.1.jar"/>
+        <resource-root path="opentelemetry-sdk-common-1.42.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.opentelemetry.api"/>
+        <module name="io.opentelemetry.api.events"/>
+        <module name="io.opentelemetry.context"/>
+        <module name="io.opentelemetry.exporter"/>
+        <module name="io.opentelemetry.semconv"/>
+        <module name="io.smallrye.opentelemetry" services="export"/>
+
+        <module name="java.logging"/>
+        <module name="jdk.unsupported"/>
+    </dependencies>
+</module>

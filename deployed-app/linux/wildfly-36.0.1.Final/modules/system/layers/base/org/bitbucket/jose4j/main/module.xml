@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.bitbucket.jose4j" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jose4j-0.9.6.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.slf4j"/>
+    </dependencies>
+</module>

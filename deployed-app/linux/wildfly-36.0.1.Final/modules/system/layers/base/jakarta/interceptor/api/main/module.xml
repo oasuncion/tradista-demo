@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.interceptor.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <!--<artifact name="${org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.2_spec}"/>-->
+        <resource-root path="jakarta.interceptor-api-2.1.0.jar"/>
+    </resources>
+</module>

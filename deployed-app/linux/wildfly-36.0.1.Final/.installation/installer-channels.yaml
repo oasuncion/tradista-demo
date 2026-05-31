@@ -1,0 +1,18 @@
+---
+schemaVersion: "2.0.0"
+name: "wildfly"
+repositories:
+  - id: "jboss-public-repository-group"
+    url: "https://repository.jboss.org/nexus/content/groups/public/"
+  - id: "atlassian-plugin-sdk"
+    url: "file:///opt/homebrew/Cellar/atlassian-plugin-sdk/8.2.7/libexec/repository"
+  - id: "central"
+    url: "https://repo.maven.apache.org/maven2"
+  - id: "jboss-ga-repository"
+    url: "https://maven.repository.redhat.com/ga/"
+manifest:
+  maven:
+    groupId: "org.wildfly.channels"
+    artifactId: "wildfly"
+    version: "36.0.1.Final"
+resolve-if-no-stream: "none"

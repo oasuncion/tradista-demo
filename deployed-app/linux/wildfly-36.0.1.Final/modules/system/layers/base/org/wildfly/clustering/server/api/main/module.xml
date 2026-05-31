@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.clustering.server.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="wildfly-clustering-server-api-36.0.1.Final.jar"/>
+        <resource-root path="wildfly-clustering-server-api-6.0.4.Final.jar"/>
+    </resources>
+</module>

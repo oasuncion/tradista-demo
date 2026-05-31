@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.http-client.naming" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="wildfly-http-naming-client-2.1.0.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.naming"/>
+        <module name="org.wildfly.http-client.common"/>
+        <module name="org.wildfly.client.config"/>
+        <module name="org.jboss.ejb-client"/>
+        <module name="io.undertow.core"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.marshalling"/>
+        <module name="org.jboss.marshalling.river"/>
+        <module name="org.jboss.xnio"/>
+        <module name="org.wildfly.security.elytron"/>
+        <module name="org.wildfly.http-client.ejb" optional="true" services="import"/>
+        <module name="org.wildfly.naming-client"/>
+    </dependencies>
+</module>

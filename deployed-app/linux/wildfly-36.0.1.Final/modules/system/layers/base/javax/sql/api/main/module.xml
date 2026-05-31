@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="javax.sql.api" xmlns="urn:jboss:module:1.9">
+        <!--
+		This module is deprecated and any use of it should be replaced
+		with java.sql, java.sql.rowset or java.transaction.xa JPMS modules provided by Java SE.
+	-->
+    <properties>
+        <property name="jboss.api" value="deprecated"/>
+    </properties>
+    <dependencies>
+        <module name="java.sql" export="true"/>
+        <module name="java.sql.rowset" export="true"/>
+        <module name="java.transaction.xa" export="true"/>
+    </dependencies>
+</module>

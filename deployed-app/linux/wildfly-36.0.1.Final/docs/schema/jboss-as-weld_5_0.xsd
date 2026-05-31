@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:jboss:domain:weld:5.0"
+           xmlns="urn:jboss:domain:weld:5.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="5.0">
+
+    <!-- The Weld subsystem root element -->
+
+    <xs:element name="subsystem" type="subsystem"/>
+
+    <xs:complexType name="subsystem">
+        <xs:attribute name="require-bean-descriptor" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation>If true then implicit bean archives without bean descriptor file (beans.xml) are ignored by Weld</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="non-portable-mode" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation>If true then the non-portable mode is enabled. The non-portable mode is suggested by the specification to overcome problems with legacy applications that do not use CDI SPI properly and may be rejected by more strict validation in CDI 1.1.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="development-mode" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation>Weld comes with a special mode for application development. When the development mode is enabled, certain built-in tools, which facilitate the development of CDI applications, are available. Setting this attribute to true activates the development mode.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="thread-pool-size" type="xs:int">
+            <xs:annotation>
+                <xs:documentation>The number of threads to be used by the Weld thread pool. The pool is shared across all CDI-enabled deployments and used primarily for parallel Weld bootstrap.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="legacy-empty-beans-xml-treatment" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation>Treats bean archives with empty beans.xml as having discovery mode ALL.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+</xs:schema>

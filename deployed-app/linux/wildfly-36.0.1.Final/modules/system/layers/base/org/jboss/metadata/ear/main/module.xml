@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.metadata.ear" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jboss-metadata-ear-16.0.0.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+        <module name="org.jboss.metadata.common"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+</module>

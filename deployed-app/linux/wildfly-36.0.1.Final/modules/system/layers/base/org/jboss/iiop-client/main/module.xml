@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.iiop-client" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jboss-iiop-client-2.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.naming"/>
+        <module name="java.rmi"/>
+        <module name="jakarta.ejb.api"/>
+        <module name="org.omg.api"/>
+        <module name="javax.rmi.api"/>
+    </dependencies>
+</module>

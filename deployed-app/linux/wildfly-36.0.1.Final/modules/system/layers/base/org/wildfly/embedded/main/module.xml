@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.embedded" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <!-- Core version of the embedded API is currently only meant
+        for use by the CLI -->
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <exports>
+        <exclude path="org/jboss/as/embedded/logging"/>
+    </exports>
+
+    <resources>
+        <resource-root path="wildfly-embedded-28.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.desktop"/> <!-- for PropertyChangeListener -->
+        <module name="org.jboss.as.controller-client"/>
+        <module name="org.jboss.as.host-controller" services="import"/>
+        <module name="org.jboss.as.server" services="import"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.modules"/>
+    </dependencies>
+</module>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.glassfish.soteria" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jakarta.security.enterprise-3.0.3.jar"/>
+        <resource-root path="soteria.spi.bean.decorator.weld-3.0.3.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.logging"/>
+        <module name="java.naming"/>
+        <module name="java.sql"/>
+        <module name="jakarta.security.enterprise.api"/>
+        <module name="jakarta.servlet.api"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.security.auth.message.api"/>
+        <module name="org.jboss.weld.core"/>
+        <module name="org.jboss.weld.spi"/>
+        <module name="jakarta.xml.bind.api"/>
+        <module name="jakarta.interceptor.api"/>
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.inject.api"/>
+        <module name="jakarta.security.jacc.api"/>
+        <module name="jakarta.ejb.api"/>
+        <module name="jakarta.json.api"/>
+        <module name="jakarta.ws.rs.api"/>
+        <module name="com.nimbusds.nimbus-jose-jwt"/>
+    </dependencies>
+</module>

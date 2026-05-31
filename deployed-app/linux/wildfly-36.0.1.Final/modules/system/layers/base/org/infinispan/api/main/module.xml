@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.infinispan.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <!-- Keep private until no longer experimental -->
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="infinispan-api-15.1.7.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.smallrye.reactive.mutiny"/>
+        <!-- Do not enable Infinispan.Factory implementations yet, as this API is still experimental -->
+    </dependencies>
+</module>

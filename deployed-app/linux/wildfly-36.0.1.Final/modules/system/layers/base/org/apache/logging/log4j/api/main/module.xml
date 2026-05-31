@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.logging.log4j.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="public"/>
+    </properties>
+
+    <resources>
+        <resource-root path="log4j-api-2.23.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <!--
+            This is a circular dependency to avoid adding the private implementation to a dependent module. The API uses
+            static variables for the providers and factories. These are located through a custom service loader and we
+            should bind to this implementation only. Users wanting to not use this implementation need to also not use
+            this API.
+        -->
+        <module name="org.jboss.logmanager.log4j2" services="import"/>
+    </dependencies>
+</module>

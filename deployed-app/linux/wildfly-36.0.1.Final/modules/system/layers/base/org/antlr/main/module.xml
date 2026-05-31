@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.antlr" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="antlr4-4.13.0.jar"/>
+        <resource-root path="antlr4-runtime-4.13.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.desktop"/>
+    </dependencies>
+</module>

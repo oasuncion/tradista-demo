@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.micrometer" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="micrometer-commons-1.14.5.jar"/>
+        <resource-root path="micrometer-core-1.14.5.jar"/>
+        <resource-root path="micrometer-registry-otlp-1.14.5.jar"/>
+        <resource-root path="micrometer-registry-prometheus-1.14.5.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="com.google.protobuf"/>
+        <module name="io.opentelemetry.otlp"/>
+        <module name="io.opentelemetry.proto"/>
+        <!-- This is only required if the 'registry=prometheus' resource is configured -->
+        <module name="io.prometheus" optional="true"/>
+
+        <module name="jakarta.servlet.api"/>
+        <module name="java.management"/>
+        <module name="java.logging"/>
+    </dependencies>
+</module>

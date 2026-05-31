@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.extension.mvc-krazo" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.stability" value="preview"/>
+    </properties>
+
+    <resources>
+        <resource-root path="mvc-krazo-subsystem-1.0.0.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+        <module name="org.eclipse.krazo.core"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.as.ee"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.as.version"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.wildfly.subsystem"/>
+    </dependencies>
+</module>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.reactivex.rxjava2.rxjava" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="rxjava-2.2.21.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.reactivestreams"/>
+    </dependencies>
+
+</module>
