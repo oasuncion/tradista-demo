@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.slf4j" xmlns="urn:jboss:module:1.9">
+    <resources>
+        <resource-root path="slf4j-api-2.0.16.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.slf4j.impl" services="import"/>
+    </dependencies>
+</module>

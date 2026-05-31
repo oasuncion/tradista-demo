@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.prometheus" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.stability" value="community"/>
+    </properties>
+
+    <resources>
+        <resource-root path="prometheus-metrics-exposition-formats-1.3.1.jar"/>
+        <resource-root path="prometheus-metrics-model-1.3.1.jar"/>
+        <resource-root path="prometheus-metrics-config-1.3.1.jar"/>
+        <resource-root path="prometheus-metrics-shaded-protobuf-1.3.1.jar"/>
+        <resource-root path="simpleclient-0.16.0.jar"/>
+        <resource-root path="simpleclient_common-0.16.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.management"/>
+        <module name="java.logging"/>
+    </dependencies>
+</module>

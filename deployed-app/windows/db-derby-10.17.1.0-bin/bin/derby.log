@@ -1,0 +1,14 @@
+Tue Dec 23 09:56:54 CET 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) démarré et prêt à accepter les connexions sur le port 1527
+----------------------------------------------------------------
+Tue Dec 23 09:57:22 CET 2025:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217) : instance a816c00e-019b-4a6c-f641-00000f3eb0e8 
+dans le répertoire de base de données C:\Tradista\WS\TradistaDemo\db-derby-10.17.1.0-bin\bin\Tradista avec le chargeur de classe jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a
+Chargé de file:/C:/Softwares/tradistademo/db-derby-10.17.1.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=24.0.1+9-30
+user.dir=C:\Tradista\WS\TradistaDemo\db-derby-10.17.1.0-bin\bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Chargeur de classe de la base de données démarré - derby.database.classpath = ''

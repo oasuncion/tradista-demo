@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.security.elytron-web.undertow-server-servlet" version="4.1.2.Final" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="undertow-server-servlet-4.1.2.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.metadata.common"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-web.undertow-server"/>
+        <module name="org.wildfly.security.elytron-private"/>
+        <module name="org.wildfly.security.jakarta.authorization"/>
+        <module name="io.undertow.core"/>
+        <module name="io.undertow.servlet"/>
+        <module name="jakarta.servlet.api"/>
+        <module name="jakarta.security.jacc.api"/>
+        <module name="jakarta.security.auth.message.api"/>
+    </dependencies>
+</module>

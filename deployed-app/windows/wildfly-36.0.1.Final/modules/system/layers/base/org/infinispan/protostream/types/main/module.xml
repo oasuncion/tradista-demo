@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.infinispan.protostream.types" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="protostream-types-5.0.13.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.infinispan.protostream"/>
+    </dependencies>
+</module>

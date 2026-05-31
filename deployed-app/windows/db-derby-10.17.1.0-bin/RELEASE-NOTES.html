@@ -1,0 +1,240 @@
+<html lang="en">
+<title>Release Notes for Apache Derby 10.17.1.0</title>
+<body>
+<h1>
+<a name="Release Notes for Apache Derby 10.17.1.0"></a>Release Notes for Apache Derby 10.17.1.0</h1>
+<div>
+<p>These notes describe the difference between Apache Derby release 10.17.1.0 and the preceding release 10.16.1.1.</p>
+</div>
+<ul>
+<li>
+<a href="#Overview">Overview</a>
+</li>
+<li>
+<a href="#New Features">New Features</a>
+</li>
+<li>
+<a href="#Bug Fixes">Bug Fixes</a>
+</li>
+<li>
+<a href="#Issues">Issues</a>
+</li>
+<li>
+<a href="#Build Environment">Build Environment</a>
+</li>
+<li>
+<a href="#Verifying Releases">Verifying Releases</a>
+</li>
+</ul>
+<h2>
+<a name="Overview"></a>Overview</h2>
+<div>
+
+
+<p>
+The most up to date information about Derby releases can be found on the
+<a href="https://db.apache.org/derby/derby_downloads.html">Derby download page</a>.
+</p>
+
+
+<p>
+Apache Derby is a pure Java relational database engine using standard SQL and
+JDBC as its APIs. More information about Derby can be found on the
+<a href="https://db.apache.org/derby/">Apache web site</a>.
+Derby functionality includes:
+</p>
+
+
+<ul>
+
+<li>Embedded engine with JDBC drivers</li>
+
+<li>Network Server</li>
+
+<li>Network client JDBC drivers</li>
+
+<li>Command line tools: ij (SQL scripting), dblook (schema dump) and sysinfo (system info)</li>
+
+</ul>
+
+
+<p>
+The 10.17 release family supports the following Java and JDBC versions:
+</p>
+
+<ul>
+  
+<li>Java SE 21 and higher with JDBC 4.2.</li>
+
+</ul>
+
+</div>
+<h2>
+<a name="New Features"></a>New Features</h2>
+<div>
+
+
+<p>
+The major feature of this release is support for Java SE 21.
+</p>
+
+
+<p>
+New users should consult the
+<a href="https://db.apache.org/derby/manuals/index.html#docs_10.17">10.17 documentation</a>,
+especially the
+<a href="https://db.apache.org/derby/docs/10.17/getstart/index.html">Getting Started With Derby</a> guide.
+</p>
+
+
+</div>
+<h2>
+<a name="Bug Fixes"></a>Bug Fixes</h2>
+<div>
+<p>The following issues are addressed by Derby release 10.17.1.0. These issues are not addressed in the preceding 10.16.1.1 release.</p>
+<table border="2">
+<tr>
+<th>
+<div style="width:110px;">Issue Id</div>
+</th><th>Description</th>
+</tr>
+<tr>
+<td><a href="https://issues.apache.org/jira/browse/DERBY-7143">DERBY-7143</a></td><td>HarmonySerialBlob.getBinaryStream(long, long) makes it impossible to retrieve the last character of the Blob.</td>
+</tr>
+<tr>
+<td><a href="https://issues.apache.org/jira/browse/DERBY-7144">DERBY-7144</a></td><td>MERGE INSERT failing when target has GENERATED IDENTITY column</td>
+</tr>
+<tr>
+<td><a href="https://issues.apache.org/jira/browse/DERBY-7147">DERBY-7147</a></td><td>LDAP injection vulnerability in LDAPAuthenticationImpl</td>
+</tr>
+<tr>
+<td><a href="https://issues.apache.org/jira/browse/DERBY-7149">DERBY-7149</a></td><td>Make it possible to build and test Derby cleanly with JDK 20</td>
+</tr>
+</table>
+</div>
+<h2>
+<a name="Issues"></a>Issues</h2>
+<div>
+<ul>
+<li>
+<a href="#Note for DERBY-7147"><span>Note for DERBY-7147: 
+Denial of service attacks might have been possible when using LDAP authentication.
+</span></a>
+</li>
+</ul>
+<p>Compared with the previous release (10.16.1.1), Derby release 10.17.1.0 introduces the following new features and incompatibilities. These merit your special attention.</p>
+<hr>
+<h3>
+<a name="Note for DERBY-7147"></a>Note for DERBY-7147</h3>
+<div>
+
+
+<h4>Summary of Change</h4>
+
+<p>
+Denial of service attacks might have been possible when using LDAP authentication.
+</p>
+
+
+<!-- 
+  DESCRIBE WHAT IT IS THAT THE USER ACTUALLY SEES WHEN THE PROBLEM OCCURS.
+
+  For instance:
+
+  In the previous release, applications were able to open two
+  InputStreams on the same column. Depending on how these streams
+  interacted, the value siphoned out of the column was erratic. Now
+  Derby raises a SQLException when the application attempts to create
+  the second InputStream.
+-->
+
+
+<h4>Symptoms Seen by Applications Affected by Change</h4>
+
+<p>
+An LDAP injection vulnerablilty was identified. It was assigned this id: CVE-2022-46337.
+Credit for finding the vulnerability goes to 4ra1n and Y4tacker.
+Someone exploiting this vulnerability might have been able to log on with a bizarre user name
+which looked like an LDAP protocol string. The user would then have been able to create
+and populate tables and therefore exhaust disk resources.
+The vulnerability was closed by escaping LDAP protocol strings.
+</p>
+
+
+<h4>Application Changes Required</h4>
+
+<p>
+No application changes are necessary.
+</p>
+
+
+
+</div>
+</div>
+<h2>
+<a name="Build Environment"></a>Build Environment</h2>
+<div>
+<p>Derby release 10.17.1.0 was built using the following environment:</p>
+<ul>
+<li>
+<b>Branch</b> - Source code came from the 10.18 branch.</li>
+<li>
+<b>Machine</b> - Mac OSX 11.2.3.</li>
+<li>
+<b>Ant</b> - Apache Ant(TM) version 1.10.14 compiled on August 16 2023.</li>
+<li>
+<b>Compiler</b> - All classes were compiled by the javac from OpenJDK 64-Bit Server VM (build 21+35-2513, mixed mode, sharing).</li>
+</ul>
+</div>
+<h2>
+<a name="Verifying Releases"></a>Verifying Releases</h2>
+<div>
+
+
+<p>It is essential that you verify the integrity of the downloaded
+files using the PGP and SHA-512 signatures.  SHA-512 verification ensures the
+file was not corrupted during the download process.  PGP verification
+ensures that the file came from a certain person.</p>
+
+
+<p>The PGP signatures can be verified using
+<a href="https://www.pgpi.org/">PGP</a> or
+<a href="https://www.gnupg.org/">GPG</a>.
+First download the Apache Derby
+<a href="https://www.apache.org/dist/db/derby/KEYS">KEYS</a>
+as well as the <code>asc</code> signature file for the particular
+distribution. It is important that you get these files from the ultimate
+trusted source - the main ASF distribution site, rather than from a mirror.
+Then verify the signatures using ...</p>
+
+
+<pre>
+% pgpk -a KEYS
+% pgpv db-derby-X.Y.tar.gz.asc
+
+<em>or</em>
+
+% pgp -ka KEYS
+% pgp db-derby-X.Y.tar.gz.asc
+
+<em>or</em>
+
+% gpg --import KEYS
+% gpg --verify db-derby-X.Y.tar.gz.asc
+
+</pre>
+
+
+<p>To verify the SHA-512 checksums on the files, you need to use a
+platform-specific program. On Mac OSX, this program is called
+<code>shasum</code>, on Linux it is called <code>sha512sum</code>,
+and on Windows it is called <code>CertUtil</code>.</p>
+
+
+<p>We strongly recommend that you verify your downloads with both PGP and SHA-512.</p>
+
+
+
+</div>
+</body>
+</html>

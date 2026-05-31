@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.security.elytron-jwt" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-elytron-jwt-2.0.0.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.smallrye.jwt"/>
+        <module name="org.eclipse.microprofile.jwt.auth.api"/>
+        <module name="jakarta.json.api"/>
+    </dependencies>
+</module>

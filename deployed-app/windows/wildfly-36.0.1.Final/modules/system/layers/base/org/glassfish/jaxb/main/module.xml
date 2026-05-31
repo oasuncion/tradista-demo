@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.glassfish.jaxb" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="istack-commons-runtime-4.1.2.jar"/>
+        <resource-root path="istack-commons-tools-4.1.2.jar"/>
+        <resource-root path="rngom-4.0.5.jar"/>
+        <resource-root path="relaxng-datatype-4.0.5.jar"/>
+        <resource-root path="codemodel-4.0.5.jar"/>
+        <resource-root path="jaxb-jxc-4.0.5.jar"/>
+        <resource-root path="jaxb-runtime-4.0.5.jar"/>
+        <resource-root path="jaxb-core-4.0.5.jar"/>
+        <resource-root path="jaxb-xjc-4.0.5.jar"/>
+        <resource-root path="xsom-4.0.5.jar"/>
+        <resource-root path="txw2-4.0.5.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.logging"/>
+        <module name="java.compiler"/>
+        <module name="java.desktop"/>
+        <module name="java.xml"/>
+        <module name="jakarta.activation.api"/>
+        <module name="jakarta.xml.bind.api"/>
+        <module name="jdk.compiler" optional="true"/>
+    </dependencies>
+
+</module>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<xs:schema xmlns="urn:clustering:1.1"
+           targetNamespace="urn:clustering:1.1"
+           version="1.1"
+           xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://www.jboss.org/j2ee/schema/jboss-ejb3-spec-2_0.xsd">
+   <xs:import namespace="http://java.sun.com/xml/ns/javaee" schemaLocation="https://www.jboss.org/j2ee/schema/jboss-ejb3-spec-2_0.xsd"/>
+
+   <xs:element name="clustering" substitutionGroup="javaee:assembly-descriptor-entry" type="clusteringType"/>
+
+   <xs:complexType name="clusteringType">
+      <xs:complexContent>
+         <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
+            <xs:choice>
+                <xs:element name="clustered-singleton" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation>Indicates that the mdb will be active in a single node of the cluster.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:choice>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+</xs:schema>

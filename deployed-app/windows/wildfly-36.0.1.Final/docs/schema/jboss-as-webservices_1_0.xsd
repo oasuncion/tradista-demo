@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:jboss:domain:webservices:1.0" xmlns="urn:jboss:domain:webservices:1.0"
+	xmlns:jaxwsconfig="urn:jboss:jbossws-jaxws-config:4.0" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="1.0">
+
+    <xs:import namespace="urn:jboss:jbossws-jaxws-config:4.0" schemaLocation="jbossws-jaxws-config_4_0.xsd"/>
+
+	<!-- The webservices subsystem root element -->
+	<xs:element name="subsystem" type="webservices-containerType" />
+
+	<!-- The webservices container configuration -->
+	<xs:complexType name="webservices-containerType">
+		<xs:annotation>
+			<xs:documentation>
+                <![CDATA[
+                    The webservices subsystem, used to configure JBossWS.
+                ]]>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="modify-wsdl-address" minOccurs="0"
+				maxOccurs="1" type="xs:boolean" />
+			<xs:element name="wsdl-host" minOccurs="0" maxOccurs="1"
+				type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+               <![CDATA[
+                  The WSDL, that is a required deployment artifact for an endpoint, has a <soap:address>
+                  element which points to the location of the endpoint. JBoss supports rewriting of that SOAP address.
+
+                  If the content of <soap:address> is a valid URL, JBossWS will not rewrite it unless 'modify-soap-address' is true.
+                  If the content of <soap:address> is not a valid URL, JBossWS will rewrite it using the attribute values given below.
+
+                  If 'webServiceHost' is set to 'jbossws.undefined.host', JBossWS uses requesters host when rewriting the <soap:address>
+               ]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="wsdl-port" minOccurs="0" maxOccurs="1"
+				type="xs:int" />
+			<xs:element name="wsdl-secure-port" minOccurs="0"
+				maxOccurs="1" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>
+               <![CDATA[
+                  Set these properties to explicitly define the ports that will be used for rewriting the SOAP address.
+                  Otherwise the ports will be identified by querying the list of installed connectors.
+               ]]>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded"
+				name="endpoint-config" type="jaxwsconfig:endpointConfigType" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

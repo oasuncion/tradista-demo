@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.controller-client" xmlns="urn:jboss:module:1.9">
+
+    <exports>
+        <exclude path="org/jboss/as/controller/client/logging"/>
+    </exports>
+
+    <resources>
+        <resource-root path="wildfly-controller-client-28.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-private"/>
+        <module name="org.jboss.as.protocol"/>
+        <module name="org.jboss.dmr"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.remoting"/>
+        <module name="org.jboss.threads"/>
+    </dependencies>
+</module>

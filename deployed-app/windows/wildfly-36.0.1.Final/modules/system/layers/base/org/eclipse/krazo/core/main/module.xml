@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.eclipse.krazo.core" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.stability" value="preview"/>
+    </properties>
+
+    <resources>
+        <resource-root path="krazo-core-3.0.1.jar"/>
+    </resources>
+    
+    <dependencies>
+        <module name="java.desktop"/>
+        <module name="java.logging"/>
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.mvc.api"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.servlet.api"/>
+        <module name="jakarta.validation.api"/>
+        <module name="jakarta.ws.rs.api"/>
+        <!-- Needed to import service implementations -->
+        <module name="org.eclipse.krazo.resteasy" services="import"/>
+        <!-- Needed to inject the server-provided ValidatorFactory -->
+        <module name="org.hibernate.validator" optional="true"/>
+        <module name="org.jboss.weld.api"/>
+        <module name="org.jboss.weld.core"/>
+        <module name="org.jboss.weld.spi"/>
+    </dependencies>
+</module>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.mail" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-mail-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+        <module name="jakarta.mail.api"/>
+        <module name="org.eclipse.angus.mail">
+            <imports>
+                <include path="META-INF"/>
+            </imports>
+        </module>
+        <module name="org.jboss.as.network"/>
+        <module name="org.jboss.as.naming"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.as.ee"/>
+        <module name="io.smallrye.jandex"/>
+        <module name="org.jboss.metadata.common"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-private"/>
+        <module name="org.wildfly.service"/>
+    </dependencies>
+</module>

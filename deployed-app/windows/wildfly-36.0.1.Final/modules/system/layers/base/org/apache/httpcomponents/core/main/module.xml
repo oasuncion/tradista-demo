@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.httpcomponents.core" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="httpclient-4.5.14.jar"/>
+        <resource-root path="httpcore-4.4.16.jar"/>
+    </resources>
+
+
+    <dependencies>
+        <module name="java.naming"/>
+        <module name="java.security.jgss"/>
+        <module name="org.apache.commons.logging"/>
+        <!-- Following module is available in WildFly full -->
+        <module name="org.apache.commons.codec" optional="true"/>
+    </dependencies>
+</module>

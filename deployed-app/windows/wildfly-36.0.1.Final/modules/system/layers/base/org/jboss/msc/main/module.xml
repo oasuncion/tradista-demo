@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.msc" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.require-java-version" value="11"/>
+    </properties>
+
+    <main-class name="org.jboss.msc.Version"/>
+
+    <resources>
+        <resource-root path="jboss-msc-1.5.5.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.desktop"/>
+        <module name="java.management"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.threads"/>
+    </dependencies>
+
+</module>

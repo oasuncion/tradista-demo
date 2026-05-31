@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:security:2.0"
+           xmlns="urn:security:2.0"
+           xmlns:jakartaee="https://jakarta.ee/xml/ns/jakartaee/"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.0">
+   <xs:import namespace="https://jakarta.ee/xml/ns/jakartaee/"/>
+
+   <xs:element name="security" type="securityType" substitutionGroup="jakartaee:assembly-descriptor-entry"/>
+
+   <xs:complexType name="securityType">
+      <xs:complexContent>
+         <xs:extension base="jakartaee:jboss-assembly-descriptor-bean-entryType">
+            <xs:sequence>
+               <xs:element name="security-domain" type="xs:string" minOccurs="0"/>
+               <xs:element name="run-as-principal" type="xs:string" minOccurs="0"/>
+               <xs:element name="missing-method-permissions-deny-access" type="xs:boolean" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <![CDATA[
+                                    If an EJB is secured but certain methods haven't been marked with explicit roles or @PermitAll/@DenyAll
+                                    then the EJB container uses this missing-method-permissions-deny-access element to decide whether or not
+                                    access is allowed to such methods.
+                                    Setting this element to true will prevent access to this by any role (i.e.
+                                    the method is as good as being marked as @DenyAll).
+                                    Setting this element to false will allow access to this method by any role (i.e. the method is as
+                                    good as being marked as @PemitAll)
+
+                            ]]>
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

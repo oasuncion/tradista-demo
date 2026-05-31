@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.fasterxml.jackson.core.jackson-annotations" xmlns="urn:jboss:module:1.9">
+     <resources>
+        <resource-root path="jackson-annotations-2.18.3.jar"/>
+    </resources>
+
+    <dependencies>
+    </dependencies>
+</module>

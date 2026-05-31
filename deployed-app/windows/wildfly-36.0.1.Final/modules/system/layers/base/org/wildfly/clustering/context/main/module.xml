@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.clustering.context" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-clustering-context-6.0.4.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <!-- Loads naming contextualizer -->
+        <module name="org.jboss.as.clustering.common" services="import" optional="true"/>
+        <!-- Loads batching contextualizer -->
+        <module name="org.wildfly.clustering.cache.infinispan.common" services="import" optional="true"/>
+        <module name="org.jboss.threads"/>
+        <module name="org.wildfly.common"/>
+    </dependencies>
+</module>

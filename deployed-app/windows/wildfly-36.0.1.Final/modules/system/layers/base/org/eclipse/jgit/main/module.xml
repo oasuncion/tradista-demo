@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.eclipse.jgit" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="org.eclipse.jgit-6.10.0.202406032230-r.jar"/>
+        <resource-root path="org.eclipse.jgit.ssh.apache-6.10.0.202406032230-r.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.management"/>
+        <module name="java.security.jgss"/>
+        <module name="java.sql"/>
+        <module name="java.xml"/>
+        <module name="org.slf4j"/>
+        <module name="org.slf4j.impl"/>
+        <module name="org.apache.sshd"/>
+        <module name="com.googlecode.javaewah"/>
+        <module name="org.apache.httpcomponents.core"/>
+        <module name="org.bouncycastle.bcpg"/>
+        <module name="org.bouncycastle.bcpkix"/>
+        <module name="org.bouncycastle.bcprov"/>
+    </dependencies>
+</module>

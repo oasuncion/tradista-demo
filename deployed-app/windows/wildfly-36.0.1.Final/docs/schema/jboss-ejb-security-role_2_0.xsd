@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:security-role:2.0"
+           xmlns="urn:security-role:2.0"
+           xmlns:jakartaee="https://jakarta.ee/xml/ns/jakartaee"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://www.jboss.org/schema/jbossas/jboss-ejb3-spec-4_0.xsd">
+   <xs:import namespace="https://jakarta.ee/xml/ns/jakartaee" schemaLocation="https://www.jboss.org/schema/jbossas/jboss-ejb3-spec-4_0.xsd"/>
+
+   <xs:element name="security-role" type="security-roleType" substitutionGroup="jakartaee:assembly-descriptor-entry"/>
+
+   <xs:complexType name="security-roleType">
+      <xs:annotation>
+         <xs:documentation> The security-role element contains the definition of a security role.
+            The definition consists of the security role name and principal name element(s). </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="description"
+            type="jakartaee:descriptionType"
+            minOccurs="0"
+            maxOccurs="unbounded"/>
+         <xs:element name="role-name"
+            type="jakartaee:role-nameType"/>
+         <xs:element name="principal-name" type="principal-nameType" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+   </xs:complexType>
+   
+   <xs:complexType name="principal-nameType">
+      <xs:annotation>
+         <xs:documentation> The principal-name element is the name of the principal that is mapped
+            to the assembly role-name. </xs:documentation>
+      </xs:annotation>
+      <xs:simpleContent>
+         <xs:restriction base="jakartaee:string"/>
+      </xs:simpleContent>
+   </xs:complexType>
+</xs:schema>

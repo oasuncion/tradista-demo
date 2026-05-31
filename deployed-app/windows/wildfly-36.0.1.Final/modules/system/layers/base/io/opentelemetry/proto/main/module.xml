@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.opentelemetry.proto" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="opentelemetry-proto-1.3.2-alpha.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.opentelemetry.otlp"/>
+        <module name="com.google.protobuf"/>
+
+        <module name="java.management"/>
+        <module name="java.logging"/>
+    </dependencies>
+</module>

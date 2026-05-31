@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="ibm.jdk" xmlns="urn:jboss:module:1.6">
+        <!--
+                This module is deprecated and should not be referenced at all by other modules.
+                There is no replacement or alternative module that could be referenced instead
+                because this module in reality exports nothing (packages don't exist) on JDK 11 and above.
+	-->
+    <properties>
+        <property name="jboss.api" value="deprecated"/>
+    </properties>
+    <dependencies>
+        <system export="true">
+            <paths>
+                <path name="com/ibm"/>
+                <path name="com/ibm/crypto"/>
+                <path name="com/ibm/crypto/provider"/>
+                <path name="com/ibm/dataaccess"/>
+                <path name="com/ibm/jsse"/>
+                <path name="com/ibm/jsse2"/>
+                <path name="com/ibm/jvm"/>
+                <path name="com/ibm/jvm/io"/>
+                <path name="com/ibm/jvm/util"/>
+                <path name="com/ibm/math"/>
+                <path name="com/ibm/misc"/>
+                <path name="com/ibm/misc/resources"/>
+                <path name="com/ibm/net"/>
+                <path name="com/ibm/nio"/>
+                <path name="com/ibm/nio/ch"/>
+                <path name="com/ibm/security/auth"/>
+                <path name="com/ibm/security/auth/callback"/>
+                <path name="com/ibm/security/auth/login"/>
+                <path name="com/ibm/security/auth/module"/>
+                <path name="com/ibm/security/bootstrap"/>
+                <path name="com/ibm/security/util"/>
+            </paths>
+        </system>
+    </dependencies>
+</module>

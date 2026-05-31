@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.security.auth.message.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="jakarta.authentication-api-3.0.0.jar"/>
+    </resources>
+
+</module>

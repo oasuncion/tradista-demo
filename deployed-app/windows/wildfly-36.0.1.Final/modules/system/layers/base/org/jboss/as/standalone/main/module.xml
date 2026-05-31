@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.standalone" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.require-java-version" value="11"/>
+    </properties>
+
+    <main-class name="org.jboss.as.server.Main"/>
+
+    <resources>
+    </resources>
+
+    <dependencies>
+        <!-- Workaround for ELY-1561 -->
+        <module name="jdk.security.auth"/>
+        <module name="java.xml"/>
+        <module name="org.jboss.logmanager" services="import"/>
+        <module name="org.jboss.as.jmx" services="import"/>
+        <module name="org.jboss.as.server" export="true"/>
+        <module name="org.jboss.vfs" services="import"/>
+        <module name="org.wildfly.security.elytron-private" services="import"/>
+    </dependencies>
+</module>

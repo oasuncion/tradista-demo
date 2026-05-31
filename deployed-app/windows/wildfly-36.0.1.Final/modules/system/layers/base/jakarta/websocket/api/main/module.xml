@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.websocket.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="jakarta.websocket-api-2.1.1.jar"/>
+        <resource-root path="jakarta.websocket-client-api-2.1.1.jar"/>
+    </resources>
+
+</module>

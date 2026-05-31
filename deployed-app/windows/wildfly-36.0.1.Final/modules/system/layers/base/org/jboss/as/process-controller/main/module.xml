@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.process-controller" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+        <property name="jboss.require-java-version" value="11"/>
+    </properties>
+
+    <exports>
+        <exclude path="org/jboss/as/process/logging"/>
+    </exports>
+
+    <main-class name="org.jboss.as.process.Main"/>
+
+    <resources>
+        <resource-root path="wildfly-process-controller-28.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.logging"/>
+        <module name="java.xml"/>
+        <module name="org.wildfly.security.elytron-private" services="import"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.jboss.as.version" export="true"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.logmanager" services="import"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.threads"/>
+    </dependencies>
+</module>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.weld.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="weld-api-5.0.SP3.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.inject.api"/>
+        <module name="jakarta.persistence.api"/>
+        <module name="jakarta.interceptor.api"/>
+        <module name="jakarta.servlet.api"/>
+    </dependencies>
+</module>

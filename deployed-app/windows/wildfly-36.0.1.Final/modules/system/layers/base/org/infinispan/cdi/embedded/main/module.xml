@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.infinispan.cdi.embedded" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="infinispan-cdi-embedded-15.1.7.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.inject.api"/>
+
+        <module name="org.infinispan.cdi.common"/>
+        <module name="org.infinispan.commons"/>
+        <module name="org.infinispan.core"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+
+</module>

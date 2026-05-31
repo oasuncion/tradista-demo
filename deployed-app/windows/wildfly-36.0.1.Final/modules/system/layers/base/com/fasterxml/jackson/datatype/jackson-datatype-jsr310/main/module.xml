@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" xmlns="urn:jboss:module:1.9">
+     <resources>
+        <resource-root path="jackson-datatype-jsr310-2.18.3.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="com.fasterxml.jackson.core.jackson-core"/>
+        <module name="com.fasterxml.jackson.core.jackson-databind"/>
+        <module name="com.fasterxml.jackson.core.jackson-annotations"/>
+    </dependencies>
+</module>

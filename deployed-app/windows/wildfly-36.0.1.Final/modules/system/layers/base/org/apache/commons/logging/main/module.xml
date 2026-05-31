@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.commons.logging" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="public"/>
+    </properties>
+
+    <dependencies>
+        <!-- This allows the org.jboss.logging.commons.logging module to be private while keeping this module public -->
+        <module name="org.jboss.logging.commons.logging" export="true"/>
+    </dependencies>
+</module>

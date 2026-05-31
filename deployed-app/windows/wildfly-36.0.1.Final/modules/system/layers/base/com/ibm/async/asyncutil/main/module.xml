@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.ibm.async.asyncutil" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="asyncutil-0.1.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.logging"/>
+    </dependencies>
+</module>

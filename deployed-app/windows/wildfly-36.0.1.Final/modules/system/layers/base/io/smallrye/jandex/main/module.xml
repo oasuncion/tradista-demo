@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.smallrye.jandex" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <main-class name="org.jboss.jandex.Main"/>
+
+    <resources>
+        <resource-root path="jandex-3.2.7.jar"/>
+    </resources>
+
+    <dependencies>
+    </dependencies>
+</module>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<xs:schema xmlns="urn:ejb-cache:2.0"
+           xmlns:jakartaee="https://jakarta.ee/xml/ns/jakartaee" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="urn:ejb-cache:2.0"
+           version="2.0"
+           xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://www.jboss.org/schema/jbossas/jboss-ejb3-spec-4_0.xsd">
+   <xs:import namespace="https://jakarta.ee/xml/ns/jakartaee" schemaLocation="https://www.jboss.org/schema/jbossas/jboss-ejb3-spec-4_0.xsd"/>
+
+   <xs:element name="cache" substitutionGroup="jakartaee:assembly-descriptor-entry" type="cacheType"/>
+
+   <xs:complexType name="cacheType">
+      <xs:complexContent>
+         <xs:extension base="jakartaee:jboss-assembly-descriptor-bean-entryType">
+            <xs:sequence>
+               <xs:element name="cache-ref" type="xs:string"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+</xs:schema>

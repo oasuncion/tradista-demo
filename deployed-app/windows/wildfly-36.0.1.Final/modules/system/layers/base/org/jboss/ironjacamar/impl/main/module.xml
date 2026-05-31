@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.ironjacamar.impl" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="ironjacamar-common-impl-3.0.13.Final.jar"/>
+        <resource-root path="ironjacamar-core-impl-3.0.13.Final.jar"/>
+        <resource-root path="ironjacamar-deployers-common-3.0.13.Final.jar"/>
+        <resource-root path="ironjacamar-validator-3.0.13.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.naming"/>
+        <module name="java.rmi"/>
+        <module name="java.transaction.xa"/>
+        <module name="java.xml"/>
+        <module name="jakarta.transaction.api"/>
+        <module name="jakarta.resource.api"/>
+        <module name="jakarta.security.auth.message.api"/>
+        <module name="jakarta.validation.api"/>
+        <module name="org.hibernate.validator" services="import"/>
+        <module name="org.jboss.as.naming"/>
+        <module name="org.jboss.jboss-transaction-spi"/>
+        <module name="org.jboss.ironjacamar.api"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.threads"/>
+        <module name="org.wildfly.transaction.client"/>
+    </dependencies>
+
+</module>

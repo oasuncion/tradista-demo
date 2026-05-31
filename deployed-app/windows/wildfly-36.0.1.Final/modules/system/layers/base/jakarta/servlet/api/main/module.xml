@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.servlet.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="jakarta.servlet-api-6.0.0.jar"/>
+    </resources>
+</module>

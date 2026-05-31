@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.jboss.as.jmx" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <exports>
+        <exclude path="org/jboss/as/jmx/logging"/>
+    </exports>
+
+    <resources>
+        <resource-root path="wildfly-jmx-28.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.management"/>
+        <module name="java.xml"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.core-security"/>
+        <module name="org.jboss.as.domain-management"/>
+        <module name="org.jboss.as.remoting"/>
+        <module name="org.wildfly.common"/>
+        <module name="org.wildfly.security.elytron-private"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.remoting"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.remoting-jmx" services="import" optional="true"/>
+    </dependencies>
+</module>

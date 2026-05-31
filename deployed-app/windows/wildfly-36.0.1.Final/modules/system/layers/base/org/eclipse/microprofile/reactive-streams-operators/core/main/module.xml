@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.eclipse.microprofile.reactive-streams-operators.core" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="microprofile-reactive-streams-operators-core-3.0.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.eclipse.microprofile.reactive-streams-operators.api"/>
+        <module name="org.reactivestreams"/>
+        <module name="org.jboss.logging"/>
+    </dependencies>
+</module>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.json.bind.api" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="public"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jakarta.json.bind-api-3.0.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="jakarta.json.api"/>
+        <!-- Circular dependency on the implementation to ensure that:
+             1. The implementation is loaded
+             2. It is done last via the hard-coded class name in the spec API
+         -->
+        <module name="org.eclipse.yasson"/>
+    </dependencies>
+</module>

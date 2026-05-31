@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:jboss:domain:io:1.0"
+           targetNamespace="urn:jboss:domain:io:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
+    <!-- The io subsystem root element -->
+    <xs:element name="subsystem" type="io-subsystemType"/>
+    <xs:complexType name="io-subsystemType">
+        <xs:annotation>
+            <xs:documentation>
+                <![CDATA[
+                The configuration of the io subsystem.
+            ]]>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="worker" type="workerType"/>
+            <xs:element name="buffer-pool" type="bufferPoolType"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="workerType">
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="io-threads" type="xs:int" default="4"/>
+        <xs:attribute name="task-keepalive" type="xs:int" default="60"/>
+        <xs:attribute name="task-max-threads" type="xs:int" default="60"/>
+        <xs:attribute name="stack-size" type="xs:long" default="0"/>
+    </xs:complexType>
+    <xs:complexType name="bufferPoolType">
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="buffer-size" use="optional" type="xs:int" default="1024"/>
+        <xs:attribute name="buffers-per-slice" use="optional" type="xs:int" default="1024"/>
+        <xs:attribute name="direct-buffers" use="optional" type="xs:boolean" default="true"/>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<xs:schema xmlns="urn:delivery-active:1.0"
+           targetNamespace="urn:delivery-active:1.0"
+           version="1.0"
+           xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://www.jboss.org/j2ee/schema/jboss-ejb3-spec-2_0.xsd">
+   <xs:import namespace="http://java.sun.com/xml/ns/javaee" schemaLocation="https://www.jboss.org/j2ee/schema/jboss-ejb3-spec-2_0.xsd"/>
+
+   <xs:element name="delivery" substitutionGroup="javaee:assembly-descriptor-entry" type="deliveryType"/>
+
+   <xs:complexType name="deliveryType">
+      <xs:complexContent>
+         <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
+            <xs:sequence>
+                <xs:element name="active" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation>The delivery-active states whether messages will be delivered to the message-driven bean as soon as it is deployed (default is true).
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+</xs:schema>

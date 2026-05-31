@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="urn:jboss:domain:jmx:1.2"
+            xmlns="urn:jboss:domain:jmx:1.2"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="1.2">
+
+    <!-- The jmx subsystem root element -->
+    <xs:element name="subsystem" type="subsystem"/>
+
+    <xs:complexType name="subsystem">
+      <xs:sequence>
+         <xs:element name="expose-resolved-model" type="resolvedModelType" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="expose-expression-model" type="expressionModelType" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="remoting-connector" type="remotingConnectorRefType" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resolvedModelType">
+      <xs:attribute name="domain-name" type="xs:string" default="jboss.as"/>
+      <xs:attribute name="proper-property-format" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <xs:complexType name="expressionModelType">
+      <xs:attribute name="domain-name" type="xs:string" default="jboss.as.expr"/>
+    </xs:complexType>
+
+    <xs:complexType name="remotingConnectorRefType">
+        <xs:attribute name="use-management-endpoint" type="xs:boolean" default="true" use="optional" >
+            <xs:annotation>
+                <xs:documentation>
+                    If true then this connector will use the management endpoint, otherwise it will use the
+                    remoting subsystem endpoint.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+</xs:schema>

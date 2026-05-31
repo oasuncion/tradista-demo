@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:wildfly:microprofile-health-smallrye:3.0"
+           xmlns="urn:wildfly:microprofile-health-smallrye:3.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
+
+    <!-- The subsystem root element -->
+    <xs:element name="subsystem">
+        <xs:complexType>
+            <xs:attribute name="security-enabled" type="xs:boolean" default="true">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[[
+                        True if authentication is required to access the HTTP endpoints on the
+                        HTTP management interface.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="empty-liveness-checks-status" default="UP" type="check-statusType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[[
+                        Defines the global status returned by the Health checks endpoints if no
+                        liveness probes have been defined in deployments.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="empty-readiness-checks-status" default="UP" type="check-statusType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[[
+                        Defines the global status returned by the Health checks endpoints if no
+                        readiness probes have been defined in deployments.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="empty-startup-checks-status" default="UP" type="check-statusType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[[
+                        Defines the global status returned by the Health checks endpoints if no
+                        startup probes have been defined in deployments.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="check-statusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UP"/>
+            <xs:enumeration value="DOWN"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.smallrye.health" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="smallrye-health-4.2.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.eclipse.microprofile.config.api"/>
+        <module name="org.eclipse.microprofile.health.api"/>
+        <module name="jakarta.enterprise.api"/>
+        <module name="jakarta.annotation.api"/>
+        <module name="jakarta.json.api"/>
+        <module name="org.jboss.logging"/>
+        <module name="io.smallrye.config" services="import"/>
+    </dependencies>
+</module>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.security.jakarta.client.resteasy" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="jakarta-client-resteasy-3.1.4.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.logmanager"/>
+        <module name="org.jboss.resteasy.resteasy-jaxrs"/>
+        <module name="org.wildfly.client.config"/>
+        <module name="org.wildfly.security.elytron-base" services="import"/>
+    </dependencies>
+</module>

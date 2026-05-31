@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.microsoft.azure.storage" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="azure-storage-8.6.6.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.xml"/>
+        <module name="com.fasterxml.jackson.core.jackson-core"/>
+        <module name="org.slf4j"/>
+    </dependencies>
+</module>

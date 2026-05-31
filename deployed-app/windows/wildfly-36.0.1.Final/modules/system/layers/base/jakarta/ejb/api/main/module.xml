@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="jakarta.ejb.api" xmlns="urn:jboss:module:1.9">
+
+    <resources>
+        <resource-root path="jakarta.ejb-api-4.0.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.naming"/>
+        <module name="java.rmi"/>
+        <!-- This dep is for javax.naming -->
+        <module name="jakarta.transaction.api"/>
+    </dependencies>
+</module>

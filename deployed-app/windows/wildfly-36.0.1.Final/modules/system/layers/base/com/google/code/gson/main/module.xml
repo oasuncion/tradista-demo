@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="com.google.code.gson" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <!-- Direct access to GSON is necessary to take advantage
+             of native Elasticearch APIs in Hibernate Search in particular,
+             so it is allowed in WildFly,
+             though it may not be supported by product vendors
+             (because its APIs could change without prior notice). -->
+        <property name="jboss.api" value="public"/>
+    </properties>
+
+    <resources>
+        <resource-root path="gson-2.8.9.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="java.sql"/>
+        <module name="jdk.unsupported"/>
+    </dependencies>
+
+</module>

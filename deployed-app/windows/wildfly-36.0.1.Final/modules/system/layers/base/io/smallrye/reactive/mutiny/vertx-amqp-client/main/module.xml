@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="io.smallrye.reactive.mutiny.vertx-amqp-client" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="smallrye-mutiny-vertx-amqp-client-3.17.1.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="io.smallrye.reactive.mutiny"/>
+        <module name="io.smallrye.reactive.mutiny.vertx-core"/>
+        <module name="io.smallrye.reactive.mutiny.vertx-runtime"/>
+        <module name="io.vertx.core"/>
+        <module name="io.vertx.client.amqp"/>
+        <module name="org.slf4j"/>
+    </dependencies>
+</module>

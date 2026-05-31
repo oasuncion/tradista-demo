@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.apache.james.mime4j" xmlns="urn:jboss:module:1.9">
+
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="apache-mime4j-core-0.8.12.jar"/>
+        <resource-root path="apache-mime4j-dom-0.8.12.jar"/>
+        <resource-root path="apache-mime4j-storage-0.8.12.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.apache.commons.io"/>
+        <module name="org.apache.commons.logging"/>
+    </dependencies>
+</module>

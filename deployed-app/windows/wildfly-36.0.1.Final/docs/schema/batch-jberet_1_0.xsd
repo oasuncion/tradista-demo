@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:jboss:batch-jberet:1.0"
+           targetNamespace="urn:jboss:batch-jberet:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
+
+    <!-- The deployment descriptor root element -->
+    <xs:element name="batch" type="batchType"/>
+
+    <xs:complexType name="batchType">
+        <xs:annotation>
+            <xs:documentation>
+                <![CDATA[
+                The batch environment configuration for the deployment.
+            ]]>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="restart-jobs-on-resume" type="booleanType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        If set to true when a resume operation has be invoked after a suspend operation any jobs stopped
+                        during the suspend will be restarted. A value of false will leave the jobs in a stopped state.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="job-repository" type="job-repositoryType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="thread-pool" type="namedType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                        Specify the name of the thread-pool to use defined in the batch-jberet subsystem.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="namedType">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="booleanType">
+        <xs:attribute name="value" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="job-repositoryType">
+        <xs:annotation>
+            <xs:documentation>
+                <![CDATA[
+                The name of the job repository to use
+            ]]>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="1" maxOccurs="1">
+            <xs:element name="in-memory" type="in-memoryType"/>
+            <xs:element name="named" type="namedType">
+                <xs:annotation>
+                    <xs:documentation>
+                        <![CDATA[
+                        Indicates the name of the job repository defined on the subsystem to use.
+                        ]]>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="in-memoryType">
+        <xs:annotation>
+            <xs:documentation>
+                <![CDATA[
+                        Used to describe an in-memory job repository.
+                ]]>
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+</xs:schema>
