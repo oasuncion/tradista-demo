@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.extension.core-management-client" xmlns="urn:jboss:module:1.9">
+    <resources>
+        <resource-root path="wildfly-core-management-client-28.0.1.Final.jar"/>
+    </resources>
+    <dependencies>
+    </dependencies>
+</module>

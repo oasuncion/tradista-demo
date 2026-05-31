@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.clustering.singleton.compat" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-clustering-singleton-compat-36.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.msc"/>
+        <module name="org.wildfly.clustering.server.api"/>
+        <module name="org.wildfly.clustering.service"/>
+        <module name="org.wildfly.clustering.singleton.api"/>
+    </dependencies>
+</module>

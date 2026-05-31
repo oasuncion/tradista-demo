@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright The WildFly Authors
+  ~ SPDX-License-Identifier: Apache-2.0
+  -->
+<module name="org.wildfly.installation-manager" xmlns="urn:jboss:module:1.9">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="wildfly-installation-manager-28.0.1.Final.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.host-controller"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.wildfly.installation-manager.api" services="import"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.as.cli"/>
+        <module name="org.jboss.as.domain-http-interface"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.wildfly.security.manager"/>
+    </dependencies>
+</module>
