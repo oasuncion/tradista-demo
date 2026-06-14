@@ -32,6 +32,9 @@ Open your browser and navigate to the specialized modules:
 
 📌 **Credentials:** Use `test` / `test` for both Username and Password.
 
+#### 🖥️ Preview: Repo Trading Dashboard
+![Eclipse Tradista Repo Trading Dashboard v3.2.0](./dashboard.png)
+
 ---
 
 ## 📊 What's Inside? (Sample Data)
