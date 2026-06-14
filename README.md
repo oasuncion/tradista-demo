@@ -6,7 +6,7 @@ Welcome to the official Eclipse Tradista demo package. This self-contained envir
 
 This pre-configured package includes:
 * **Eclipse Tradista Database** (Pre-loaded with sample data)
-* **Tradista Application Server**
+* **Eclipse Tradista Application Server**
 * **Desktop Client & Web Dashboards**
 
 ---
