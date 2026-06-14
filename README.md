@@ -48,7 +48,7 @@ To help you evaluate the platform right away, this environment comes pre-loaded 
 We are constantly improving Eclipse Tradista. Your feedback is highly valuable to us:
 
 * **Found a bug or want a new core feature?** Open an issue on the main [Eclipse Tradista Repository](https://github.com/eclipse/tradista).
-* **Need more specific sample data for this demo?** Feel free to request it directly here on the [Tradista Demo Repository](https://github.com/eclipse/tradista-demo).
+* **Need more specific sample data for this demo?** Feel free to request it directly here on the [Eclipse Tradista Demo Repository](https://github.com/eclipse/tradista-demo).
 
 ---
 
