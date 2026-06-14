@@ -209,8 +209,6 @@
                 <module name="org.eclipse.tradista.ir.model"/>
                 <module name="org.eclipse.tradista.mm.model"/>
                 <module name="org.eclipse.tradista.security.model"/>
-                <module name="org.eclipse.tradista.org.springframework.spring-beans"/>
-                <module name="org.eclipse.tradista.org.springframework.spring-context"/>
             </global-modules>
             <spec-descriptor-property-replacement>false</spec-descriptor-property-replacement>
             <concurrent>

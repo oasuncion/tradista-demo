@@ -7,9 +7,12 @@
 	</resources>
 
 	<dependencies>
-		<module name="org.eclipse.tradista.org.slf4j.slf4j-api"
+		<module name="org.slf4j" />
+		<module name="org.eclipse.tradista.fx.model" export="true" />
+		<module name="org.eclipse.tradista.ir.model" export="true" />
+		<module name="org.eclipse.tradista.mm.model" export="true" />
+		<module name="org.eclipse.tradista.security.model"
 			export="true" />
-		<module name="org.eclipse.tradista.core.model" export="true" />
 		<module name="java.desktop" />
 		<module name="java.sql" />
 		<module name="java.naming" />

@@ -1,6 +1,6 @@
 This is a demo package for Eclipse Tradista.
 
-It is based on Eclipse Tradista v3.1.0.
+It is based on Eclipse Tradista v3.2.0-RC1.
 This demo package is made of Eclipse Tradista database, server and desktop client installed locally.
 This Eclipse Tradista environment contains dummy data. A "Demo Book" book is used, with trades of several asset classes being booked.
 
