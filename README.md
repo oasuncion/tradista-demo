@@ -39,7 +39,7 @@ Open your browser and navigate to the specialized modules:
 
 ## 📊 What's Inside? (Sample Data)
 
-To help you evaluate the platform right away, this environment comes pre-loaded with a comprehensive set of dummy market data under the **"Demo Book"** profile. You can immediately explore and interact with pre-booked trades across multiple asset classes.
+To help you evaluate the platform right away, this environment comes pre-loaded with a comprehensive set of dummy market data. All trades across multiple asset classes are pre-booked under the **'Demo Book'** book.
 
 ---
 
