@@ -6,7 +6,7 @@ Welcome to the official Eclipse Tradista demo package. This self-contained envir
 
 This pre-configured package includes:
 * **Eclipse Tradista Database** (Pre-loaded with sample data)
-* **Tradista Application Server**
+* **Eclipse Tradista Application Server**
 * **Desktop Client & Web Dashboards**
 
 ---
@@ -33,13 +33,13 @@ Open your browser and navigate to the specialized modules:
 📌 **Credentials:** Use `test` / `test` for both Username and Password.
 
 #### 🖥️ Preview: Repo Trading Dashboard
-![Eclipse Tradista Repo Trading Dashboard v3.2.0](./dashboard.png)
+![Eclipse Tradista Repo Trading Dashboard v3.2.0](./dashboard.PNG)
 
 ---
 
 ## 📊 What's Inside? (Sample Data)
 
-To help you evaluate the platform right away, this environment comes pre-loaded with a comprehensive set of dummy market data under the **"Demo Book"** profile. You can immediately explore and interact with pre-booked trades across multiple asset classes.
+To help you evaluate the platform right away, this environment comes pre-loaded with a comprehensive set of dummy market data. All trades across multiple asset classes are pre-booked under the **'Demo Book'** book.
 
 ---
 
@@ -48,7 +48,7 @@ To help you evaluate the platform right away, this environment comes pre-loaded 
 We are constantly improving Eclipse Tradista. Your feedback is highly valuable to us:
 
 * **Found a bug or want a new core feature?** Open an issue on the main [Eclipse Tradista Repository](https://github.com/eclipse/tradista).
-* **Need more specific sample data for this demo?** Feel free to request it directly here on the [Tradista Demo Repository](https://github.com/eclipse/tradista-demo).
+* **Need more specific sample data for this demo?** Feel free to request it directly here on the [Eclipse Tradista Demo Repository](https://github.com/eclipse/tradista-demo).
 
 ---
 
