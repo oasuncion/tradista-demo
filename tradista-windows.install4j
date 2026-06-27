@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="11.0.5" transformSequenceNumber="11">
   <directoryPresets config="./dist" />
-  <application name="Eclipse Tradista - Demo package" applicationId="6605-2724-3929-1174" mediaDir="./dist" mediaFilePattern="${compiler:sys.shortName}-${compiler:sys.platform}-${compiler:sys.version}" shortName="tradistademo" publisher="Olivier Asuncion" publisherWeb="https://www.tradista.finance" version="3.2.0-RC1" convertDotsToUnderscores="false" macVolumeId="92ce865bfad9700d">
+  <application name="Eclipse Tradista - Demo package" applicationId="6605-2724-3929-1174" mediaDir="./dist" mediaFilePattern="${compiler:sys.shortName}-${compiler:sys.platform}-${compiler:sys.version}" shortName="tradistademo" publisher="Olivier Asuncion" publisherWeb="https://www.tradista.finance" version="3.2.0" convertDotsToUnderscores="false" macVolumeId="92ce865bfad9700d">
     <jreBundles jdkProviderId="AdoptOpenJDK" release="24/jdk-24.0.2+12">
       <modules>
         <defaultModules set="all" />
