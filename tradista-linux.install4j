@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<install4j version="11.0.5" transformSequenceNumber="11">
+<install4j version="13.1.3" transformSequenceNumber="13">
   <directoryPresets config="./dist" />
-  <application name="Eclipse Tradista - Demo package" applicationId="5837-6009-0667-1908" mediaDir="./dist" mediaFilePattern="${compiler:sys.shortName}-${compiler:sys.platform}-${compiler:sys.version}" shortName="tradistademo" publisher="Olivier Asuncion" publisherWeb="https://www.tradista.finance" version="3.2.0" convertDotsToUnderscores="false" macVolumeId="92ce865bfad9700d">
+  <application name="Eclipse Tradista - Demo package" applicationId="5837-6009-0667-1908" mediaDir="./dist" mediaFilePattern="${compiler:sys.shortName}-${compiler:sys.platform}-${compiler:sys.version}" shortName="tradistademo" publisher="Olivier Asuncion" publisherWeb="https://www.tradista.finance" version="3.3.0-RC1" convertDotsToUnderscores="false" macVolumeId="92ce865bfad9700d">
     <jreBundles jdkProviderId="AdoptOpenJDK" release="24/jdk-24.0.2+12">
       <modules>
         <defaultModules set="all" />
@@ -23,6 +23,7 @@
           <screen id="1" beanClass="com.install4j.runtime.beans.screens.StartupScreen" rollbackBarrierExitCode="0">
             <actions>
               <action id="22" beanClass="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction" actionElevationType="none" rollbackBarrierExitCode="0" />
+              <action id="35" beanClass="com.install4j.runtime.beans.actions.control.SetInstallationDirectoryAction" actionElevationType="none" />
             </actions>
           </screen>
         </startup>
@@ -35,7 +36,7 @@
                     <element index="0">sys.installationDir</element>
                   </property>
                 </serializedBean>
-                <condition>context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
+                <condition>context.getBooleanVariable("sys.streamlinedInstallation")</condition>
               </action>
             </actions>
             <formComponents>
@@ -56,9 +57,12 @@ return console.askOkCancel(message, true);
                   </property>
                 </serializedBean>
               </formComponent>
-              <formComponent id="5" beanClass="com.install4j.runtime.beans.formcomponents.UpdateAlertComponent" useExternalParametrization="true" externalParametrizationName="Update Alert" externalParametrizationMode="include">
+              <formComponent id="5" beanClass="com.install4j.runtime.beans.formcomponents.StreamlinedInstallationChooserComponent" useExternalParametrization="true" externalParametrizationName="Update Alert" externalParametrizationMode="include">
+                <serializedBean>
+                  <property name="streamlinedInstallationStrategy" type="enum" class="com.install4j.runtime.beans.formcomponents.StreamlinedInstallationStrategy" value="UPDATE_ONLY" />
+                </serializedBean>
                 <externalParametrizationPropertyNames>
-                  <propertyName>updateCheck</propertyName>
+                  <propertyName>streamlinedInstallationStrategy</propertyName>
                 </externalParametrizationPropertyNames>
               </formComponent>
               <formComponent id="6" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" insetTop="20">
@@ -69,7 +73,7 @@ return console.askOkCancel(message, true);
             </formComponents>
           </screen>
           <screen id="8" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" rollbackBarrierExitCode="0">
-            <condition>!context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
+            <condition>!context.getBooleanVariable("sys.streamlinedInstallation")</condition>
             <actions>
               <action id="11" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" rollbackBarrierExitCode="0" multiExec="true">
                 <serializedBean>
@@ -127,9 +131,10 @@ return console.askOkCancel(message, true);
           <screen id="15" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" rollbackBarrier="true" rollbackBarrierExitCode="0">
             <actions>
               <action id="17" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" actionElevationType="elevated" rollbackBarrierExitCode="0" failureStrategy="quit" errorMessage="${i18n:FileCorrupted}" />
-              <action id="18" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" actionElevationType="elevated" rollbackBarrierExitCode="0">
+              <action id="18" beanClass="com.install4j.runtime.beans.actions.desktop.CreateDefaultStartMenuEntriesAction" actionElevationType="elevated" rollbackBarrierExitCode="0">
                 <serializedBean>
-                  <property name="uninstallerMenuName" type="string">${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</property>
+                  <property name="folderName" type="string">${installer:sys.programGroupName}</property>
+                  <property name="linkDirectory" type="string">${installer:sys.symlinkDir}</property>
                 </serializedBean>
                 <condition>!context.getBooleanVariable("sys.programGroupDisabled")</condition>
               </action>
@@ -272,23 +277,6 @@ return console.askYesNo(message, true);
                   <property name="bottom" type="boolean" value="true" />
                 </object>
               </property>
-              <property name="imageEdgeBackgroundColor">
-                <object class="com.install4j.runtime.beans.LightOrDarkColor">
-                  <object class="java.awt.Color">
-                    <int>25</int>
-                    <int>143</int>
-                    <int>220</int>
-                    <int>255</int>
-                  </object>
-                  <object class="java.awt.Color">
-                    <int>0</int>
-                    <int>74</int>
-                    <int>151</int>
-                    <int>255</int>
-                  </object>
-                </object>
-              </property>
-              <property name="imageEdgeBorder" type="boolean" value="true" />
               <property name="imageFile">
                 <object class="com.install4j.api.beans.ExternalFile">
                   <string>${compiler:sys.install4jHome}/resource/styles/wizard.png</string>
@@ -302,13 +290,34 @@ return console.askYesNo(message, true);
                   <int>10</int>
                 </object>
               </property>
+              <property name="imageEdgeBackgroundColor">
+                <object class="com.install4j.runtime.beans.LightOrDarkColor">
+                  <object class="java.awt.Color">
+                    <int>27</int>
+                    <int>143</int>
+                    <int>220</int>
+                    <int>255</int>
+                  </object>
+                  <object class="java.awt.Color">
+                    <int>0</int>
+                    <int>73</int>
+                    <int>150</int>
+                    <int>255</int>
+                  </object>
+                </object>
+              </property>
             </serializedBean>
             <beans>
               <formComponent id="9" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" insetTop="0">
                 <serializedBean>
-                  <property name="labelFontSizePercent" type="int" value="130" />
-                  <property name="labelFontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
-                  <property name="labelFontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
+                  <property name="labelWidgetStyleId" type="null" />
+                  <property name="labelWidgetStyle">
+                    <property name="fontDescriptor">
+                      <property name="fontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
+                      <property name="fontSizePercent" type="int" value="130" />
+                      <property name="fontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
+                    </property>
+                  </property>
                 </serializedBean>
               </formComponent>
               <formComponent id="10" beanClass="com.install4j.runtime.beans.formcomponents.SeparatorComponent" />
@@ -386,8 +395,13 @@ return console.askYesNo(message, true);
                 <beans>
                   <formComponent name="Title" id="16" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent">
                     <serializedBean>
-                      <property name="labelFontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
-                      <property name="labelFontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
+                      <property name="labelWidgetStyleId" type="null" />
+                      <property name="labelWidgetStyle">
+                        <property name="fontDescriptor">
+                          <property name="fontType" type="enum" class="com.install4j.runtime.beans.formcomponents.FontType" value="DERIVED" />
+                          <property name="fontStyle" type="enum" class="com.install4j.runtime.beans.formcomponents.FontStyle" value="BOLD" />
+                        </property>
+                      </property>
                     </serializedBean>
                   </formComponent>
                   <formComponent name="Subtitle" id="17" beanClass="com.install4j.runtime.beans.styles.ScreenTitleComponent" insetLeft="8">
@@ -452,6 +466,9 @@ return console.askYesNo(message, true);
         </beans>
       </group>
     </styles>
+    <widgetStyles defaultWidgetStyleId="97">
+      <widgetStyle name="Standard" id="97" beanClass="com.install4j.runtime.beans.widgets.WidgetStyleCollection" />
+    </widgetStyles>
   </installerGui>
   <mediaSets>
     <unixInstaller name="Unix Installer" id="26" />

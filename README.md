@@ -1,6 +1,6 @@
 # Eclipse Tradista – Local Demo Environment
 
-![License](https://img.shields.io/badge/License-Apache_2.0-33ff99.svg?link=https://www.apache.org/licenses/LICENSE-2.0)&emsp;![Version](https://img.shields.io/badge/Version%20-%203.2.0%20-%2033ff99?color=33ff99)&emsp;![Downloads](https://img.shields.io/github/downloads/oasuncion/tradista-demo/total?color=33ff99)
+![License](https://img.shields.io/badge/License-Apache_2.0-33ff99.svg?link=https://www.apache.org/licenses/LICENSE-2.0)&emsp;![Version](https://img.shields.io/badge/Version%20-%203.3.0--RC1%20-%2033ff99?color=33ff99)&emsp;![Downloads](https://img.shields.io/github/downloads/oasuncion/tradista-demo/total?color=33ff99)
 
 Welcome to the official Eclipse Tradista demo package. This self-contained environment allows you to deploy and explore Eclipse Tradista locally on **Windows** and **Linux/Unix** in just a few clicks.
 
@@ -33,7 +33,7 @@ Open your browser and navigate to the specialized modules:
 📌 **Credentials:** Use `test` / `test` for both Username and Password.
 
 #### 🖥️ Preview: Repo Trading Dashboard
-![Eclipse Tradista Repo Trading Dashboard v3.2.0](./dashboard.PNG)
+![Eclipse Tradista Repo Trading Dashboard v3.3.0-RC1](./dashboard.PNG)
 
 ---
 

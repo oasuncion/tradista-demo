@@ -204,6 +204,8 @@
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:ee:6.0">
             <global-modules>
+				<module name="org.eclipse.tradista.ai.model"/>
+				<module name="org.eclipse.tradista.commercial.model"/>
                 <module name="org.eclipse.tradista.core.model"/>
                 <module name="org.eclipse.tradista.fx.model"/>
                 <module name="org.eclipse.tradista.ir.model"/>
@@ -542,9 +544,6 @@
                 </in-vm-acceptor>
                 <jms-queue name="ExpiryQueue" entries="java:/jms/queue/ExpiryQueue"/>
                 <jms-queue name="DLQ" entries="java:/jms/queue/DLQ"/>
-                <jms-queue name="CashInventoryQueue" entries="java:/jms/queue/CashInventoryQueue"/>
-                <jms-queue name="ProductInventoryQueue" entries="java:/jms/queue/ProductInventoryQueue"/>
-                <jms-queue name="TransferQueue" entries="java:/jms/queue/TransferQueue"/>
                 <connection-factory name="InVmConnectionFactory" entries="java:/ConnectionFactory" connectors="in-vm"/>
                 <connection-factory name="RemoteConnectionFactory" entries="java:jboss/exported/jms/RemoteConnectionFactory" connectors="http-connector"/>
                 <pooled-connection-factory name="activemq-ra" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory" connectors="in-vm" transaction="xa"/>
